@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ru.jollydroid.livewallpaperlab">
+
+    <application android:allowBackup="true"
+                 android:label="@string/app_name"
+                 android:icon="@mipmap/ic_launcher"
+                 android:roundIcon="@mipmap/ic_launcher_round"
+                 android:supportsRtl="true"
+                 android:theme="@style/AppTheme">
+
+        <service android:name=".FooBarWallpaperService"
+                 android:enabled="true"
+                 android:label="Wallpaper Example"
+                 android:permission="android.permission.BIND_WALLPAPER">
+
+            <meta-data
+                    android:name="android.service.wallpaper"
+                    android:resource="@xml/foobarwallpaper" >
+            </meta-data>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService">
+                </action>
+            </intent-filter>
+        </service>
+
+    </application>
+</manifest>
